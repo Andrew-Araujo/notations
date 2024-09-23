@@ -1,0 +1,17 @@
+# Parâmetros Variáveis
+
+- No JavaScript, dentro de todas as funções, nós temos oque chamamos de "arguments". Eles podem ser acessados a qualquer momento dentro da função.
+
+```
+function soma(){
+    for (i in arguments){
+        soma += arguments[i]
+    }
+
+    return soma
+}
+```
+
+- Observe que o código acima não possuí nenhum tipo de parâmetro, isso é porque nós temos parâmetros variáveis, ou seja, nós podemos sempre passar esses parâmetros, que serão utilizados através do array "arguments".
+
+- Portanto, nós podemos passar quantos argumentos quisermos, que sempre poderemos acessar esses parâmetros mesmo que eles não sejam utilizados ou explicitamente definidos.

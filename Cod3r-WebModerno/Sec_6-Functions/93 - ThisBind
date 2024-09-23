@@ -1,0 +1,88 @@
+# "this" e a Função Bind #01
+
+- Aqui vamos apresentar primeiramente um conflito entre paradigmas:
+
+```
+const pessoa = {
+    saudacao: 'Bom dia!'
+    falar(){
+        console.log(this.saudacao)
+    }
+}
+
+pessoa.falar()
+const falar = pessoa.falar
+falar() // conflito entre paradigmas: funcional e orientado a objeto
+
+const falarDePessoa = pessoa.falar.bind(pessoa) // o this sempre vai se resolver a const pessoa
+```
+
+- A primeira chamada da função pessoa.falar() retorna o valor sem problemas, porém a chamada da função falar() retorna undefined, realizando assim uma quebra entre as duas chamadas de funções e a chamada do "This"
+
+- Então nós vamos aplicar o bind, onde nós vamos passar um objeto para ele no qual queremos resolver o "this". Ele vai transformar determinada função na função chave de execução, fazendo com que o this retorne normalmente.
+- Deve ser levantado que o bind retorna uma outra função, então ele não vai afetar as execuções anteriores. Nesse caso, pessoa.falar vai continuar undefined
+
+---
+
+De Acordo com Chat GPT 4:
+
+O método bind() em JavaScript é usado para criar uma nova função com um valor específico de this, além de permitir a definição de argumentos iniciais que serão passados para a função.
+
+Sintaxe
+```função.bind(thisArg[, arg1[, arg2[, ...]]])```
+
+- thisArg: O valor para o qual você deseja que o this da função seja definido quando a nova função for chamada. Pode ser qualquer objeto ou null/undefined.
+- arg1, arg2, ... (opcionais): Argumentos que serão pré-definidos na função vinculada.
+
+---
+
+Como funciona?
+
+- Definir o contexto do this: A principal função do bind() é garantir que o valor de this dentro de uma função seja o que você deseja, independentemente de como ou onde a função é chamada.
+
+Exemplo:
+```
+const pessoa = {
+  nome: "Alice",
+  cumprimentar() {
+    console.log(`Olá, meu nome é ${this.nome}`);
+  }
+};
+
+const cumprimentarDesvinculado = pessoa.cumprimentar;
+cumprimentarDesvinculado(); // undefined, porque `this` não está vinculado
+
+const cumprimentarVinculado = pessoa.cumprimentar.bind(pessoa);
+cumprimentarVinculado(); // "Olá, meu nome é Alice"
+```
+
+Argumentos parciais: Com o bind(), você pode passar alguns ou todos os argumentos da função ao vinculá-la.
+
+Exemplo:
+```
+function multiplicar(a, b) {
+  return a * b;
+}
+
+const dobrar = multiplicar.bind(null, 2); // `a` será sempre 2
+console.log(dobrar(5)); // 10
+```
+
+# "this" e a Função Bind #02
+
+- Função setInterval() é uma função que vai disparar OUTRA função após o intervalo de tempo que você setou.
+
+- Como a chamada função que está dentro da setInterval() é feito de forma externa, nesse caso sendo de um temporizador, o this não vai ser referenciado dentro da função, porém, ao inserirmos um bind dentro da setInterval, nós vamos conseguir atrelar o this a função:
+
+```
+function Pessoa(){
+    this.idade = 0;
+
+    setInterval(function(){
+        this.idade++;
+        console.log(this.idade)
+    }.bind(this), 1000)
+}
+
+new Pessoa
+```

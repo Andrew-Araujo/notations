@@ -1,0 +1,23 @@
+# Exemplos Básicos de Funções #01
+
+### Algumas peculiaridades das funções em JavaScript:
+
+- Nós podemos passar mais atributos do que são chamados, o JavaScript não acusará erro
+- Em casos no qual estamos realizando uma soma de dois números, se não passarmos todos os parâmetros necessários vamos nos deparar com a resposta NaN
+
+---
+
+# Exeplos Básicos de Funções #02
+
+// Armazenando uma função em uma variável
+const imprimirSoma = function (a, b) {
+    return a + b;
+}
+
+// Armazenando uma função arrow em uma variável
+const soma = (a, b) => {
+    return a + b;
+}
+
+// retorno implícito
+const subtracao = (a, b) => a - b;

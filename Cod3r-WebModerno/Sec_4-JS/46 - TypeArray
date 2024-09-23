@@ -1,0 +1,19 @@
+# Tipos em JavaScript: Array
+
+- Assim como a questão da String, quando tentamos acessar uma posição que não existe dentro de um objeto, então temos um objeto com 3 posições, e tentamos acessar
+o valor 3 (lembrando que nesse caso vai de 0 a 2). Receberiamos o valor `undefined`.
+
+- Nós podemos adicionar um valor em uma posição específica, porém, ela não precisa seguir a sequência lógica. Ou seja, nós podemos ter um array de 0 a 10. Preencher os primeiros
+4 valores e depois definir que a posição 10 vai valer um valor x, então tipo: array[10] = 10.
+Quando nós apresentarmos o array, ele estará assim: [ 1, 2, 3, 4, <6 empty items>, 10 ]
+Portanto ele apresentará quantos valores entre a posição 3 e a posição 10 estão vazios.
+
+- Um Array no JavaScript é heterogêneo. Ou seja, ele vai aceitar múltiplos valores dentro de um único array. Nós podemos ter um array que possuí então praticamente
+todos os tipos do JavaScript, number, string, objeto, boolean, null, etc. Apesar disso, o ideal é prezar por um array de dados homogêneos.
+
+- Funções:
+
+1. .length         -> trás o tamanho do array
+2. .push           -> Coloca um valor dentro do array no final
+3. .pop()          -> Remove um valor do array
+4. delete array[i] -> Vai apagar o índice dentro desse array

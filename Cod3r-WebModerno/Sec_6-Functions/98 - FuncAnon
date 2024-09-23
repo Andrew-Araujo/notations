@@ -1,0 +1,24 @@
+# Funções Anônimas
+
+- Funções anônimas são nada mais, nada menos, que funções sem nome. São funções que geralmente vamos atribuir em variáveis ou parâmetros de função.
+
+- A própria Arrow Function é uma função anônima!
+
+
+```
+const some = function (x, y){
+    return x + y;
+}
+
+const imprimirResulotado = function (a, b, operacao = soma){
+    console.log(operacao(a,b));
+}
+
+imprimirResultado(3, 4)
+imprimirResultado(3, 4, function (x, y) {
+    return x - y;
+})
+imprimirResultado(3, 4, (x, y) => x * y)
+```
+
+- Observe as declarações, pudemos declarar uma constante como função anônima, atrelar ela como uma função padrão de um parâmetro de outra função E também fomos capazes de substituir ela com uma função diferente e com uma arrow function!

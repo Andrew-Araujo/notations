@@ -1,0 +1,30 @@
+# Tipos em JavaScript: Object
+
+- Os objetos de JavaScript são diferentes do JSON, eles não possuem nenhuma relação entre si. Isso porque Objetos JavaScript são Objetos de Chave Valor, enquanto JSON
+são Objetos Textuais.
+
+- Eles, dentro do JavaScript, são uma coleção de Chave Valor. Definidos por chaves, Ou seja:
+{
+    Const Obj = {
+        Key: Value
+    }
+}
+Porém, nem sempre precisamos definir quais são as chaves e quais são os valores, nós podemos realizar um código que é dinamicamente gerado, exemplo:
+{
+    const prod = {} // Isso define um objeto
+    prod.nome = 'Celular Samsung' // Criamos uma Chave Nome, de forma dinâmica, e atribuímos um valor a ela
+}
+
+- Os valores que o Objeto aceita, independem. Pode receber um Number, uma String ou até uma função. Também podemos colocar um objeto dentro de outro objeto.
+Isso volta no fato de que JSON <> JavaScript Obj. Por mais que a estrutura seja similar.
+
+- É possível realizar uma notação utilizando colchetes e espaços da seguinte forma:
+!!Porém, essa notação é melhor não ser utilizada!!
+{
+    prod1['Desconto Legal'] = 0.40;
+}
+No objeto ficaria:
+{
+    'Desconto Legal': 0.4
+}
+

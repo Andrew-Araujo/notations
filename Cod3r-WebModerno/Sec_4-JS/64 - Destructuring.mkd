@@ -1,0 +1,96 @@
+# Operadores: Destructuring #01 - Objetos
+
+- Esse operador de desestruturação é utilizado para extrair informações de dentro de Objetos e Arrays. Para usar ele para Objeto, é através de chaves {} e Array através de colchetes [].
+
+- Para realizar a extração é feito da seguinte forma:
+```
+const pessoa = {
+    nome: 'Ana',
+    idade: 5,
+    endereco: {
+        logradouro: 'Rua ABC',
+        numero: 1000
+    }
+}
+
+const { nome, idade } = pessoa
+
+console.log(nome, idade) // Ana 5
+```
+
+- Essa é uma forma de retirarmos em uma linha, diversas informações de dentro de um objeto, também podemos dar nomes a isso e não necessariamente utilizar os mesmos nomes de dentro do objeto
+
+```
+const {nome: n, idade: i } = pessoa
+
+console.log(n, i) // Ana, 5
+```
+
+- Quando nós tentarmos retirar alguma informação que não exista dentro do Objeto, ele retornará apenas undefined, não dará erro. A não ser que tentamos acessar um objeto aninhado que está nulo, assim, como o objeto é undefined/null, ele retornará um erro.
+
+- Para acessarmos informações de dentro de um objeto aninhado (ou seja, um objeto dentro de objeto), fazemos da seguinte forma:
+
+```
+const { endereco: {logradouro, numero, cep } } = pessoa
+
+console.log(logradouro, numero, cep) // Rua ABC 1000 undefined
+```
+
+# Operadores: Destructuring #02 - Array
+
+```
+// Exemplo #01
+const [a] = [10];
+console.log(a); // 10
+
+// Exemplo #02
+const [n1, , n3, , n5, n6 = 0] = [10, 7, 9, 8];
+console.log(n1, n3, n5, n6) // 10 9 undefined 0
+```
+
+- Necessário um ponto de atenção no Exemplo #02 para que fique claro. Nele criamos uma desestruturação do array de números no qual estávamos atribuíndo. Os pontos importantes que podemos tirar são:
+    - n2 e n4 foram omitidos nessa desestruturação, portanto pulamos o número 7 e 8
+    - A posição 5 não existe, portanto ela é dada como "undefined" justamente porque foi declarada e não definida
+    - O valor n6 recebeu um valor padrão, ou seja, se a posição 6 não existir nesse caso, ele será preenchido por padrão com o valor que é atribuído a ele na desestruturação.
+
+- Agora um exemplo com Matrizes:
+
+```
+const [, [, nota]] = [[, 8, 8], [9, 6, 8]]
+console.log(nota) // 6
+```
+
+- Aqui nesse caso estamos falando para ignorar o primeiro elemento da Matriz e focar no segundo elemento. Em seguida no segundo elemento que é outro array, nós estamos olhando para a segunda opção do array. Com isso, estaremos acessando a segunda opção do segundo array, e é aí onde paramos no 6. Porque além de apenas olharmos para a segunda posição do Array, nós ignoramos a terceira opção também.
+
+# Operadores: Destructuring #03 - Funções Objeto
+
+- Aqui vamos querer aplicar a desestruturação para poder interagir com a função sem precisarmos utilizar a notação ponto
+
+```
+function rand({min = 0, max = 1000}){
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+
+const obj = {max: 50, min: 40}
+console.log(rand(obj))          // Aqui temos um valor definido para cada um
+console.log(rand({ min: 955 })) // Aqui estamos usando o valor padrão 1000 para o max
+console.log(rand({}))           // Aqui estamos passando nenhum parâmetro, usando os parâmetros padrões, mas ainda assim estamos mandando um objeto vazio
+console.log(rand())             // Aqui estamos passando nada - ESTE GERARÁ ERRO
+```
+
+# Operadores: Destructuring #04 - Funções Array
+
+```
+funcion rand([min = 0, max = 1000]) {
+    if (min > max) [min, max] = [max, min]
+    const valor = Math.random() * (max - min) + min
+    return Math.floor(valor)
+}
+
+console.log(rand([50, 40])) // Aqui estamos passando o max e o min
+console.log(rand([992]))    // Aqui estamos passando apenas um valor, e ele vai definir automáticamente qual é o max e qual é o min
+console.log(rand([, 10]))   // Aqui explicitamente estamos passando o min
+console.log(rand([]))       // Aqui estamos passando um array vazio, consequentemente usando os valores padrões
+console.log(rand())         // Aqui estamos passando nada - ESTE GERARÁ ERRO
+```

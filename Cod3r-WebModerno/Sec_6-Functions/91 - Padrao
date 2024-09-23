@@ -1,0 +1,21 @@
+# Parâmetro Padrão
+
+- Nós temos diversas formas de definir um valor padrão para os argumentos, abaixo segue qual devemos utilizar:
+
+```
+function soma(a = 1, b = 1, c = 1){
+    return a + b + c
+}
+```
+
+- Porém, também podemos fazer da seguinte forma, que é não utilizando o recurso da linguagem, isso porque a forma apresentada anteriormente, virou recurso da linguagem em 2015:
+
+```
+function soma(a, b, c){
+    a = a != undefined ? a : 1 // Checa para indefinidos e nulos
+    b = i in arguments ? b : i // Checa se ÍNDICE, ou seja no i nós passaríamos o número referente a posição em array que vai de 0 a n, existe.
+    c = isNaN(c) ? 1 : c       // Checa que o parâmetro é um número
+
+    return a + b + c
+}
+```

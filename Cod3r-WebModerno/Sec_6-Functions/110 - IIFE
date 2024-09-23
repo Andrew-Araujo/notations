@@ -1,0 +1,10 @@
+# IIFE - Immediately Invoked Function Expression
+
+- Essa função que é imediatamente invocada, serve para fugir do escopo global, ideal para quando queremos variáveis que não interfiram com o escopo global
+
+```
+(function (){
+    console.log('Será executado na hora!')
+    console.log('Foge do escopo mais abrangente!')
+})()
+```

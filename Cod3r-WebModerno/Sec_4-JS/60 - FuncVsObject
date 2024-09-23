@@ -1,0 +1,23 @@
+# Função vs Objeto
+
+```
+
+console.log(type of Objetct) // Retornará que o tipo do Object é uma função
+
+console.log(type of new Object) // Retornará que o tipo do Object é um objeto
+
+```
+
+- Ou seja, estamos instanciando uma função, consequentemente tornando ela em um objeto. Podemos fazer isso com funções que também criamos.
+
+-- Isso também se aplicará as classes. Elas também quando são instanciadas, se tornam objetos:
+    -- Isso acontece, porque por debaixo dos panos, a Classe também é uma função no JavaScript, ela só possuí uma forma diferente de ser escrita.
+
+```
+class Produto {} // Padrão ES 2015 (ES6)
+
+console.log(typeof Produto) // Retorna o tipo Function
+console.log(typeof new Produto()) // Retorna o tipo Object
+
+// Observe que aqui eu utilizei new Produto() com parênteses, nós podemos omitir ou não os parênteses na criação de um Object
+```

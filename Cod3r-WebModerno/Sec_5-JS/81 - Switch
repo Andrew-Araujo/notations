@@ -1,0 +1,19 @@
+# Usando a Estrutura Switch/Case
+
+-  No case, não necessariamente devemos setar um por um, podemos fazer da seguinte forma:
+
+```
+switch(nota){
+    case 10: 
+    case 9:
+        console.log('Quadro de Honra');
+        break;
+    case 8: case 7:
+        console.log('Aprovado');
+        break;
+}
+```
+
+- Isso significa que quando a nota for 10 ou 9, será apresentado a mensagem 'Quadro de Honra', isso porque quando a nota for '10', ele vai olhar, vai ver que não tem nada, e ele vai passar para o próximo mesmo quando a nota do case for 9, porque o 10 estaria meio que "encapsulando" o 9.
+
+- Sempre precisamos utilizar o 'break' para sair do Switch, porque caso contrário, todo o resto será executado também caso eles se encaixem.

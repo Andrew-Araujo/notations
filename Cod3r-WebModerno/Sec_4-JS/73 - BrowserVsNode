@@ -1,0 +1,56 @@
+# Contexto de Execução: Browser vs Node
+
+- O maior poonto aqui que temos é que, quando estivermos executando o JavaScript no front-end, ele estará sendo interpretado pelo Browser. Porém, quando estivermos executando o código JavaScript, no back-end, fora do browser, estaremos executando ele no Node. 
+
+- Variáveis, definidas no contexto global, porém que sejam LET ou CONST, não ficam no CONTEXTO global, por mais que tenham sido definidas como variáveis globais. Elas não ficam no Window do servidor, elas ficam escondidas, de tal forma que elas limitam o acesso do Browser a ela mesma. 
+
+- Além disso, quando declaramos um objeto no contexto global, o valor de DENTRO do objeto não estará no contexto global, apenas a variável. Os valores de dentro do objeto ficam apenas dentro do contexto do OBJETO:
+
+```
+let pessoa = {
+    nome: 'Ana',
+    falar: function () {
+        return `Eu sou ${this.nome}`
+    }
+}
+
+pessoa.falar() // Eu sou Ana
+```
+
+- Então, enquanto estivermos com uma variável declarada da forma let, apenas nós poderemos estar "sujando" essa variável, e não qualquer um que tenha acesso ao console do navegador, que nesse caso é todo mundo..
+
+- Também previne de realizarmos códigos onde possivelmente estaríamos sujando uma variável var global mais pra frente.
+
+```
+let a = 3;
+global.b = 123;
+this.c = 456;
+
+console.log(a)                       // 3
+console.log(this.a)                  // error
+console.log(global.a)                // error
+console.log(global.b)                // 123
+console.log(this.c)                  // 456
+console.log(modulle.exports.c)       // 456
+console.log(module.exports === this) // true
+```
+
+- Como podemos ver, o module.exports é o mesmo que this. Isso porque o JavaScript é modularizado. Ainda mais levando em consideração o Node.
+
+```
+this.c = 456
+this.d = false
+this.e = 'teste'
+
+console.log(module.exports) // { c: 456, d: false, e: 'teste' }
+
+// É equivalente a declaraçaão abaixo:
+module.exports = { f: 456, g: false, h: 'teste' }
+```
+
+- Além disso, devemos exitar realizar a declaração abaixo, porque será considerado uma declaração diretamente no objeto global do Node:
+
+```
+abc = 3
+console.log(global.abc) // 3
+```

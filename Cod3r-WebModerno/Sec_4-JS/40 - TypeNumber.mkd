@@ -1,0 +1,9 @@
+# Tipos em JavaScript: Number
+
+- No JavaScript, não temos uma diferenciação de tipos entre Integer e Float, ambos são tratados pelo mesmo tipo Number.
+
+- A diferenciação é feita através da atribuição entre os valores do número. Ou seja, se tivermos um número quebrado, automaticamente teremos um Float.
+
+Porém, não é só isso...
+
+- Quando temos um valor quebrado, onde este consta como 1.0, ele não será atribuído como um Float, mas sim um Integer, mesmo se declararmos o valor "qubrado".

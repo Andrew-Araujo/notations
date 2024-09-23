@@ -1,0 +1,34 @@
+# "this" pode variar
+
+- O "this", basicamente é uma chave que te dá acesso ao dono do código que está sendo executado naquele exato momento. No Java, como um exemplo, seria o objeto que estaria sendo executado.
+
+- Porém, no JavaScript, o "this" funciona de uma forma diferente, que pode ser confusa.
+
+```
+function f1() {
+    console.log(this === window)
+}
+```
+
+- Quando executamos a função acima dentro do console do browser, o retorno que vamos ter é o retorno **true**, isso significa então que o "this" está referenciando de fato o contexto global do browser. O "this" vai sempre ser um objeto que está sendo referenciado dentro do contexto de uma execução.
+
+- Porém, dentro do JavaScript, a chamada do "this" pode variar, ou seja, dependendo da forma no qual estaremos chamando a função do código acima, o this pode estar apontando para outra coisa ao invés de continuar olhando para o window.
+
+- Utilizando o exemplo da aula: 
+    - Criamos uma função da seguinte forma: 
+    ```
+        document.getElementsByTagName('body')[0].onclick = f1;
+    ```
+    - Isso significa que em todo body da página, quando clicarmos em qualquer lugar, estaremos chamando a função f1, que definimos no começo das anotações. E nesse caso, o retorno é **false**.
+        - Também observe que por mais que estamos chamando o 'body' nesse caso ainda somos obrigados a definir qual o index que estamos pegando, isso porque é esperado o retorno de um objeto, e mesmo que esse objeto tenha apenas um índice, como o body, ainda temos que referenciar qual o índice correto.
+    - Isso vai com oque foi falado acima, como a função foi chamada de uma forma diferente, o this variou.
+
+- Porém, temos um caso onde "this" **nunca** vai variar. E isso é no caso das Arrow Functions. Portanto, criando uma função arrow, você vai travar o "this" aquele objeto. Então usando o exemplo da aula:
+
+```
+const f3 = () => console.log(this === window)
+```
+
+- Aqui, definimos a função no escopo global, então independente se chamarmos essa função através do clique ou diretamente, o resultado sempre vai ser true, porque atrelamos o "this" ao escopo global do contexto.
+
+- Lembrando que isso apenas se aplica para o objeto WINDOW, que fica no BROWSER. No NODE isso pode mudar!

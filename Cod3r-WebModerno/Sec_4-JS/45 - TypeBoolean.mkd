@@ -1,0 +1,44 @@
+# Tipos em JavaScript: Boolean
+
+- Em outras linguagens, nós temos o fato que o Boolean funciona apenas como true e false, ou também aceitam 0 e 1. Porém, o JavaScript trata o 
+boolean de uma forma um pouco diferente.
+
+1. Nós temos o padrão `true` e `false`
+2. Nós também podemos usar os valores `1` e `2`
+    2.1 Para fazermos isso, nós podemos estar utilizando a validação de falso e de falso falso
+        2.1.1 Então, em uma variável onde temos o valor 1, podemos checar se ele é falso ou falso falso (verdadeiro):
+        {
+            isAtivo = 1
+            console.log(!isAtivo) // False
+            console.log(!!isAtivo) // True
+        }
+3. Valores que são considerados verdadeiros no JavaScript
+{
+    !!3     // Número 3
+    !!-1    // 1 Negativo
+    !!' '   // Espaço em Branco ou String
+    !![]    // Array vazio
+    !!{}    // Função
+    !!Infinity // Infinito
+}
+4. Valores que são considerados falsos no JavaScript
+{
+    !!0             // Número -
+    !!''            // String totalmente vazia
+    !!null          // Valores nulos
+    !!NaN           // Not a Number
+    !!undefined     // Indefinido
+}
+5. Podemos testar a apresentação dos valores verdadeiros ou falsos através da funçãozinha abaixo:
+{
+    // Vai apresentar o primeiro valor verdadeiro
+
+    console.log(!!('' || null || 0 || ' ')) //Retorna vazio
+    console.log(!!('' || null || 123 || ' ')) //Retorna 123
+}
+6. Um exemplo prático disso é exatamente oque fizemos nos sites da campanha na hora da apresentação dos nomes:
+{
+    let Nome = req.body.nome
+    console.log(nome || 'Desconhecido')
+}
+Caso o nome for preenchido, será retornado o nome. Caso o nome seja falso (vazio), retornará Desconhecido.

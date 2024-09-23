@@ -1,0 +1,10 @@
+# Quase tudo é Função!
+
+- Um ponto muito importante que precisamos levar em condireção quando estamos aprendendo uma nova linguagem, são os conceitos. 
+Muitas vezes, nós nos frustramos a toa, por não aprender os conceitos básicos da linguagem, assim como apresentado no curso,
+muitas vezes, nós aprendemos apenas um tipo de conceito, de apenas uma linguagem, e tentamos aplicar esse conceito para todas as outras
+oque, obviamente, não funciona.
+
+- A função é o ponto principal da linguagem, seguido dos Objetos em segundo lugar
+
+- Entender como a função funciona, como podemos utilizar ela de diferentes maneiras, é essencial para aprender o JavaScript

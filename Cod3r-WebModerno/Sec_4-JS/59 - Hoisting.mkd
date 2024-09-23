@@ -1,0 +1,39 @@
+# Entendendo o Hoisting
+
+- Isso é um fenômeno que ocorre apenas no JavaScript, em outras linguagens esse comportamento não está presente, isso se dá por conta do interpretador que é utilizado para o JavaScript.
+
+### Hoisting com Var
+- Em inglês Hoisting é o ato de içar, então estaremos içando a variável, consequentemente trazendo-a para cima, portato em um código como é apresentado abaixo:
+
+```
+console.log('a =', a);
+var a = 2;
+console.log('a =', a);
+```
+
+- Essencialmente, oque vai acontecer com esses logs é a apresentação da variável da forma seguinte:
+    - a = undefined
+    - a = 2
+
+- Isso acontece, porque o interpretador do JavaScript, realiza o Hoisting, e trata o código como se fosse o código abaixo:
+
+```
+var a;
+console.log('a =', a);
+a = 2;
+console.log('a =', a);
+```
+
+- Desde que a variável esteja dentro do escopo, nós podemos ter o Hoisting acontecendo, é claro que se tentarmos acessar a variável fora de uma função por exemplo. Não vamos conseguir acessar ela mesmo e vai gerar um erro. 
+
+- Não existem motivos para usarmos o Hoisting, é algo que pode acontecer e pode ser feito, porém sempre o ideal é que realizamos a declaração das variáveis no início do nosso código para evitar essa situação onde as variáveis ficarão como undefined.
+
+### Hoisting com Let
+
+- O efeito de Hoisting com variáveis declaradas com Let, não ocorre. Ou seja, acontece exatamente oque aconteceria em outras linguagens que não funcionam como o JavaScript. Ele vai estourar um erro no console, acusando que a variável não está definida, portanto o código abaixo, não será executado:
+
+```
+console.log('b =', b);
+let b = 2;
+console.log('b =', b);
+```

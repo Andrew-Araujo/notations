@@ -1,0 +1,20 @@
+# Tipos em JavaScript: String
+
+- Temos o template string, que é utilizando a Crase, será abordado posteriormente
+
+- JavaScript é uma linguagem mais leve em termos de erros, porque por exemplo, nós pudemos puxar a uma função charAt(), em um ponto onde não existe, por exemplo
+se nós colocarmos um .charAt(5) para a palavra Sol, ele vai retornar vazio, mas não vai retornar erro.
+
+-  Abaixo vou abordar algumas funções e explicar oque cada uma faz:
+
+1. charAt(val) -> Trás qual o caractere em determinada posição dentro de uma string
+2. charCodeAt(val) -> Trás qual o Unicode do caractere na posição informada dentro de uma string
+3. indexOf('val') -> Procura dentro da string qual a posição de certo caractere ou palavra informada dentro de uma string
+4. substring(val_start, val_end) -> Trás os caracteres dentro de um determinado período
+4. concat() -> Vai concatenar strings, é possível realizar entre variáveis, strings diretas ou colocando strings dentro do concat
+    4.1 -> 'Escola '.concat(nome_escola).concat('!');
+    4.2 -> Concatenação pode ser feito através da soma (+) utilizando isso apenas para Strings, desde que tomamos cuidado com os valores
+    4.3 -> Temos uma ordem de prioridade dentro do JavaScript
+5. replace(val_1, val_2) -> Vai sustituir o val_1 pelo val_2 dentro de uma String
+6. split(separador) -> Separa uma string, utilizando o separador fornecido, aceitando tanto strings quanto regex
+    6.1 -> Uma string 'Ana,Pedro' quando realizado com split(',') gerará um array ['Ana' , 'Pedro']

@@ -1,0 +1,29 @@
+# Declaração de Variáveis Com Var #01
+
+- No JavaScript, var, tem escopo de função, o que significa que a variável é acessível em toda a função onde foi declarada, mesmo antes de sua declaração (comportamento conhecido como hoisting). Além disso, o var permite a re-declaração da variável dentro do mesmo escopo.
+
+- Ou seja, com um escopo de função, se declararmos essa variável dentro de uma função, ela será acessada dentro dessa função independente de qual bloco ela estiver.
+
+---
+
+# Declaração de Variáveis Com Var #02
+
+- Podemos ter 2 variáveis com o mesmo nome desde que estejam em escoos diferentes. É exatamete por isso que evitamos o escopo global.
+
+- Qualquer escopo de bloco não afetará a variável, ou seja, ela será sobrescrita. O único tipo de bloco que não sobrescreve uma variável são as funções, desde que a variável também seja declarada dentro da função.
+
+```
+var value = 2
+{
+    var value = 3
+}
+console.log(value) // value = 3
+```
+
+```
+var value = 2
+function valor(value){
+    var value = 3
+}
+console.log(value) // value = 2
+``` 

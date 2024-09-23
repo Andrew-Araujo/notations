@@ -1,0 +1,9 @@
+# Organização Básica de um Código JS
+
+A linguagem é organizada em linhas de código e blocos de código, onde os blocos de código são organizados em sentenças de código.
+
+- Linhas de Código <> Sentenças de Código 
+    Isso acontece porque podemos quebrar por exemplo um If, ou um console.log() em múltiplas linhas, porém eles continuam sendo uma sentença
+
+Podemos fazer um bloco de código vazio, sem precisar definílo como função ou classe, porém blocos de código não se limitam apenas a esses.
+Todo bloco de código é feito através das chaves {}.

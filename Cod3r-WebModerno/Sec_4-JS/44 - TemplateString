@@ -1,0 +1,16 @@
+# Usando Template String
+
+- Template String é montado através do uso de crase (backtick). Ele permite realizar quebras de linha e também essas quebras de linhas, assim
+como os espaçamentos são considerados e apresentados quando usarmos essa variável ou string em algum lugar. 
+
+- Ela permite realizar concatenação de elementos que não são string utilizando a simbologia ${}
+
+- É possível realizar qualquer tipo de expressões dentro do Template String, então podemos passar por exemplo:
+    `O valor de sua compra é R$ ${Compra - Desconto + Imposto}` e assim temos o resultado do valor da compra de um cliente, levando em consideração também todas as
+    operações e contas que precisamos utilizar para esse valor.
+
+- A Template String também aceita a chamada de funções, então podemos pegar, definir uma Arrow Function e depois realizar a interpolação dentro da String:
+    {
+        const up = texto => texto.toUpperCase();
+        console.log(`Ei... ${up('cuidado!')}`);
+    }

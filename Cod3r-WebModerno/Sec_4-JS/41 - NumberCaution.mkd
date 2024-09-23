@@ -1,0 +1,16 @@
+# Number: Alguns Cuidados
+
+- A divisão de um número por zero (7 / 0) não gera um erro, em JavaScript, o resultado que temos é o infinito.
+
+- Em JavaScript, por ser fracamente tipado uma operação matemática '10' / 2 o resultado ainda será 5. Porque o JavaScript pega a String e consegue
+avaliar se a String pode ser considerada um Number e realiza a operação matemática.
+
+- Realizar uma operação do tipo ('Show' * 2) em algumas linguagens, o resultado que teríamos seria 'ShowShow'. Porém, no JavaScript, isso é considerado
+um 'Not a Number' (NaN). Ou seja, não conseguimos realizar essas repetições de String através de uma operação matemática como a multiplicação. 
+
+- Em JavaScript, floats não são totalmente precisos, isso se diz respeito ao tipo de especificação de número que o JavaScript adere. No caso, muitas outras
+linguagens são assim, porém não é incomum realizarmos uma conta do tipo 0.1 + 0.7 e obtermos o resultado 0.799999999999999. Utilizar 100% de precisão é muito pesado.
+
+- Nós não temos como chamar um interal diretamente com uma função, para fazermos isso precisamos colocar dentro de parênteses, ou seja
+    10.toString()   --> Resulta em erro
+    (10).toString() --> Operação correta

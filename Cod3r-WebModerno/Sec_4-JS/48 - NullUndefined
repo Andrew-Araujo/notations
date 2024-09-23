@@ -1,0 +1,51 @@
+# Entendendo o Null & Undefined
+
+### Atribuição por Referência
+
+- Primeiramente precisamos entender atribuições de objetos, então seguindo o código abaixo:
+{
+    const a = {name: 'Teste'}
+
+    const b = a
+}
+Aqui, nós não estamos atribuindo a variável a com o valor do objeto, mas estamos colocando na constante 'a' um apontamento de endereço de memória para onde está localizado
+o objeto no qual 'atribuímos' na constante 'a'.
+Ou seja, quando valamos que b = a, oque essencialmente estamos fazendo é atribuir o mesmo endereço de memória para a variável b, sendo assim, ambas as variáveis compartilham
+o mesmo valor de endereço, por isso quando alteramos o objeto da const 'a', a const 'b' também se altera.
+
+
+### Atribuição por Valor
+
+- Quando estamos trabalhando com tipos primitivos da linguagem, como por exemplo number, nós estamos na real realizando a Atribuição por Valor, ou seja, estamos copiando
+uma variável para a outra, então é por isso que no código abaixo:
+{
+    let c = 3
+    let d = c
+    d++
+}
+d passará a valer 4 e c cntinuará valendo 3
+
+---
+
+### Conceitos de Undefined
+
+- Uma variável Undefined é referente a uma variável que `foi declarada` porém `não teve nenhum valor atribuído a ela`.
+- Isso é diferente de uma variável Is Not Defined, que se remete a uma variável que `nem foi declarada`
+
+### Conceitos de Null
+
+- Null significa a ausência de valor, ou seja, ela não está apontando para nenhum lugar na memória, ou seja:
+{
+    Uma variável undefined significa que foi uma variável que foi declarada, porém ela nunca foi inicializada (nunca colocamos um valor nela)
+
+    Já, uma variável nula, pode ser uma variável que foi declarada, iniciada, porém perdeu seu valor, ou ela simplismente foi inciciada, porém
+    apontando para nenhum lugar na memória.
+}
+
+### Pontos de Atenção
+
+- Nós precisamos ter cuidado com as variáveis Undefined ou Nula, isso porque não podemos aplicar uma função a elas, como por exemplo, se tentarmos
+executar uma função .toString() isso resultará a um erro, porque não podemos acessar o .toString() de Null.
+
+- Porém, nós podemos acessar uma chave não definida de um objeto, por exemplo, se temos um objeto inteiramente vazio e tentamos acessar a chave
+nome que não foi definida, ele apenas apresentará o valor undefined.

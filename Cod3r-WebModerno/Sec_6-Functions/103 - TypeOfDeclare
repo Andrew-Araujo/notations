@@ -1,0 +1,20 @@
+# Tipos de Declaração
+
+```
+// function declaration
+function soma(x, y){
+    return x + y
+}
+
+// Functions Expression
+const sub = function (x, y){
+    return x - y
+}
+
+// Named function expression
+const mult = function mult(x, y){
+    return x * y
+}
+```
+
+- No caso da Function Declaration, podemos chamar qualquer coisa que utiliza ela ANTES de sua declaração. Porque, o compilador do JavaScript carrega funções primeiros. As outras duas não tem essa vantagem, porque são CONSSTANTES, ou seja VARIÁVEIS, sua existência só vai ocorrer depois da linha no qual foi declarada! 

@@ -1,0 +1,17 @@
+# Funções Callback
+
+- As funções callback em JavaScript são funções passadas como argumento para outra função e executadas posteriormente, dentro dessa função, em um momento específico. Elas são frequentemente usadas para lidar com tarefas assíncronas, como requisições de rede, leitura de arquivos ou temporizadores.
+
+```
+
+const notas = [7.7, 6.5, 5.2, 8.9, 3.6, 7.1, 9.0]
+
+const notasBaixas = notas.filter(nota => nota < 7);
+
+```
+
+- notas.filter() percorre o array notas.
+
+- Para cada elemento, a callback nota => nota < 7 é chamada, onde nota é o valor do elemento atual.
+
+- Se a callback retornar true, o elemento é incluído em notasBaixas; se retornar false, ele é descartado.

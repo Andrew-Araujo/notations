@@ -1,0 +1,22 @@
+# Usando Var em Loop #01
+
+- Quando temos um loop for, nós declaramos a variável 'i' dentro dele, quando criamos essa variável como var, ainda vamos poder utilizar a variável 'i', porque ela foi declarada como var. Portanto quando o bloco de código for finalizar, ainda poderemos utilizar essa variável em nosso código.
+
+# Usando Var em Loop #02
+
+- O loop não vai respeitar o estado do 'i', por ela ser uma variável. Ou seja, se checarmos em quais posições estivermos em um loop no JavaScript, quando a variável 'i' for declarada, ela apenas apresentará o valor final dela.
+
+```
+const funcs = []
+
+for (var i, i < 10, i++){
+    funcs.push(function(){
+        console.log(i)
+    })
+}
+
+funcs[2]() // 10
+funcs[8]() // 10
+```
+
+- Ou seja, nada importa qual o estado que estava o 'i' no momento em que ele foi gravado na função. Ele no momento vale 10, e é isso que será apresentado independente do índice.

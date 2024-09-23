@@ -1,0 +1,26 @@
+# Tratamento de Erro (Try/Catch/Throw)
+
+```
+function tratarErroELancar(erro){
+    throw {
+        nome: erro.name,
+        msg: erro.message,
+        date: new Date
+    }
+}
+
+
+function imprimirNomeGritado(obj){
+    try{
+        console.log(obj.name.toUpperCase() + '!!!')
+    }catch (e) {
+        tratarErroELancar(e)
+    }finally {
+        console.log('final');
+    }
+}
+```
+
+- Uma nova funcionalidade foi apresentada no try/catch. Sendo ela o throw. O throw serve para voltar o erro para quem está no backend, para que seja mais fáicl de identificar o código e resolver o problema. 
+
+- Além disso, também teve o finally, apenas querendo reforçar que o finally vai ocorrer independente se a função foi um sucesso ou se ela teve erro.

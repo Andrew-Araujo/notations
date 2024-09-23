@@ -1,0 +1,13 @@
+# Função Construtora
+
+- No JavaScript nós tratamos funções construtoras da seguinte forma:
+    - Declaramos variáveis privadas com Let e Const, não usamos var
+    - Se quisermos declarar métodos públicos, usamos "this"
+        - this.method = function(){
+            return x;
+        }
+    - Para instanciar um OBJETO, nós usamos:
+        - const name = new Function;    // Sem Parâmetro
+        - const name = new Function();  // Sem Parâmetro
+        - const name = new Function(x); // Com Parâmetro
+    

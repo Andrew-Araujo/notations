@@ -1,0 +1,4 @@
+# Objeto Math
+
+- Nós não temos nenhum tipo de jeito de realizar exponenciação no JavaScript, para isso nós vamos usar o Math mesmo (Math.pow(val, times))
+

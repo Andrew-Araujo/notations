@@ -1,0 +1,15 @@
+# Declaração de Variáveis Com Let #01
+
+- Os blocos afetam as variáveis declaradas com let, ou seja, ele não será sobrescrito, isso é porque o let tem escopo de bloco também!
+
+- Os tipos de escopo são:
+    - Var: Função e Global
+    - Let: Função, Global e Bloco
+
+```
+let num = 1
+{
+    let num = 2
+}
+console.log(num) // num = 1
+```

@@ -1,0 +1,7 @@
+# Cidadão de Primeira Linha
+
+- Dentro do JavaScript, nós podemos tratar as funções como dados, ou seja, nós podemos passar uma função como um parâmetro, ou podemos realizra a chamada, igual realizamos no site da campanha, onde pegamos uma função filha e retornams ela para a função pai, que é uma das partes complexas da linguagem.
+
+- Uma função sempre vai retornar "undefined" e nunca null ou coutra coisa, ela sempre estará retornando indefinido
+
+- Nós podemos realizar retornos variádos dependendo do parâmetro que é passado, porém, essa flexibilidade de parâmetros pode também gerar um problema na hora de utilizar a função, porque faz com que a função seja mais complexa, algo que normalmente não queremos.

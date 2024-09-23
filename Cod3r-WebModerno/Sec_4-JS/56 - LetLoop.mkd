@@ -1,0 +1,20 @@
+# Usando Let em Loop #01
+
+- Referente ao loop for no qual o 'i' é declarado como uma 'var'. E, consequentemente, pode ser utilizado assim que o bloco for for finalizado. No caso do 'let', isso não é possível. Como o 'let' tem escopo de bloco, ele será finalizado junto do for. Portanto, não conseguimos usar essa variável fora do for.
+
+# Usando Let em Loop #02
+
+- Diferente da variável 'i' que é declarada utilizando 'var'. Dentro de um for existe o respeito do estado do 'i' referente a qual valor o 'i' atualmente possuí.
+
+```
+const funcs = []
+
+for (let i, i < 10, i++){
+    funcs.push(function(){
+        console.log(i)
+    })
+}
+
+funcs[2]() // 2
+funcs[8]() // 8
+```
